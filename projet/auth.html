@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Authentication</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .auth-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      h2 {
+        margin-top: 0;
+        color: #333;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #2980b9;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #2471a3;
+      }
+      .toggle-text {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      .toggle-text span {
+        color: #2980b9;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .error-msg {
+        color: #c0392b;
+        background: #fdebd0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: none;
+        text-align: center;
+      }
+      .success-msg {
+        color: #27ae60;
+        background: #e8f8f5;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: none;
+        text-align: center;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div id="error-box" class="error-msg"></div>
+      <div id="success-box" class="success-msg"></div>
+
+      <div id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" required />
+          </div>
+          <button type="submit">Sign In</button>
+        </form>
+        <p class="toggle-text">
+          Don't have an account? <span id="to-register">Register here</span>
+        </p>
+      </div>
+
+      <div id="register-section" class="hidden">
+        <h2>Create Account</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number (Optional)</label>
+            <input type="text" name="phone_number" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" required />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+        <p class="toggle-text">
+          Already have an account? <span id="to-login">Login here</span>
+        </p>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>
